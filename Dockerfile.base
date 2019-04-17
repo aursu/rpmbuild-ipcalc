@@ -1,0 +1,8 @@
+FROM aursu/rpmbuild:7-build
+
+USER root
+RUN yum -y install \
+        libmaxminddb-devel \
+        geolite2-city \
+        geolite2-country \
+    && yum clean all && rm -rf /var/cache/yum
